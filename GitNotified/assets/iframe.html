@@ -1,0 +1,70 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- http://garden.zendesk.com -->
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/2/zendesk_garden.css" type="text/css">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <h2 class="u-gamma">Paste Your URL Below</h2>
+
+  <br>
+
+  <h3> GitHubUrl </h3>
+  <form action="/action_page.php">
+  <input type="text" name="githubUrl"><br>
+  </form>
+
+  <div id="content"></div>
+
+
+
+  <p>Our project will bring in the following</p>
+  <br>
+  <ol>
+    <li>Status of Issue</li>
+    <li>Recent Comment</li>
+    <li>Repo Name </li>
+  </ol>
+
+  <script id="requester-template" type="text/x-handlebars-template">
+    <table>
+    <tr>
+      <td>Customer:</td>
+      <td>{{name}}</td>
+    </tr>
+    {{#if tags}}
+    <tr>
+      <td>Tags:</td>
+      <td>{{#each tags}}{{this}} {{/each}}</td>
+    </tr>
+    <tr>
+      {{/if}}
+      <td>Added:</td>
+      <td>{{created_at}}</td>
+    </tr>
+    <tr>
+      <td>Last signed in:</td>
+      <td>{{last_login_at}}</td>
+    </tr>
+    </table>
+</script>
+
+<script id="error-template" type="text/x-handlebars-template">
+  <p>{{status}} - {{statusText}} error. Please reach out to David Woods, Ronan Connor or Keith Brosnan.</p>
+</script>
+
+  <footer>
+    <a href="https://shopify.slack.com/messages/C9CB4QH7V" target="_blank">Give Feedback In Our Channel</a>
+  </footer>
+
+  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+
+  <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js"></script>
+
+
+</body>
+</html>
